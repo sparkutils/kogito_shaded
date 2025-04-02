@@ -1,0 +1,14 @@
+rule com.fasterxml.jackson.** sparkutils.com.fasterxml.jackson.@1
+rule org.xmlpull.** sparkutils.org.xmlpull.@1
+rule org.drools.** sparkutils.org.drools.@1
+rule org.kie.** sparkutils.org.kie.@1
+rule org.eclipse.jdt.** sparkutils.org.eclipse.jdt.@1
+rule org.antlr.** sparkutils.org.antlr.@1
+rule org.jpmml.** sparkutils.org.jpmml.@1
+rule org.dmg.pmml.** sparkutils.org.dmg.pmml.@1
+rule jakarta.xml.bind.** sparkutils.jakarta.xml.bind.@1
+rule io.github.xstream.** sparkutils.io.github.xstream.@1
+rule com.thoughtworks.xstream.** sparkutils.com.thoughtworks.xstream.@1
+rule com.github.javaparser.** sparkutils.com.github.javaparser.@1
+rule ch.obermuhlner.** sparkutils.ch.obermuhlner.@1
+rule io.cloudevents.** sparkutils.io.cloudevents.@1
