@@ -44,7 +44,7 @@
 
         <mavenCompilerPluginVersion>3.8.1</mavenCompilerPluginVersion>
         <mavenJarPluginVersion>3.2.0</mavenJarPluginVersion>
-        <mavenShadePluginVersion>3.2.1</mavenShadePluginVersion>
+        <mavenShadePluginVersion>3.6.0</mavenShadePluginVersion>
         <mavenFlattenPluginVersion>1.2.7</mavenFlattenPluginVersion>
         <mavenProjectInfoReportsPluginVersion>3.1.1</mavenProjectInfoReportsPluginVersion>
 
@@ -124,6 +124,9 @@
                 <version>${mavenFlattenPluginVersion}</version>
                 <configuration>
                     <flattenMode>oss</flattenMode>
+                    <pomElements>
+                        <dependencies>remove</dependencies>
+                    </pomElements>
                 </configuration>
                 <executions>
                     <!-- enable flattening -->
@@ -155,12 +158,15 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <!-- does not work <minimizeJar>true</minimizeJar> -->
+<!--                            <createDependencyReducedPom>true</createDependencyReducedPom>
+                            <useDependencyReducedPomInJar>true</useDependencyReducedPomInJar>
+                            <shadedArtifactAttached>true</shadedArtifactAttached> -->
                             <artifactSet>
                                 <includes>
-                                    <!-- --> <include>xmlpull:*</include>
+                                    <include>xmlpull:*</include>
                                     <include>org.drools:*</include>
                                     <include>org.kie:*</include>
+                                    <include>org.kie.kogito:*</include>
                                     <include>org.eclipse:*</include>
                                     <include>org.antlr:*</include>
                                     <include>org.jpmml:*</include>
@@ -170,6 +176,7 @@
                                     <include>com.github.javaparser:*</include>
                                     <include>com.globalmentor:*</include>
                                     <include>ch.obermuhlner:*</include>
+                                    <include>org.antlr:*</include>
                                     <include>io.cloudevents:*</include>
                                     <include>com.fasterxml.jackson.core:*</include>
                                 </includes>
@@ -186,6 +193,9 @@
                                         <exclude>META-INF/*.SF</exclude>
                                         <exclude>META-INF/*.DSA</exclude>
                                         <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>META-MF/services/**</exclude>
+                                        <exclude>META-MF/MANIFEST.MF</exclude>
+                                        <exclude>META-MF/maven/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
@@ -221,7 +231,7 @@
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-jsr223</artifactId>
-                        <version>3.0.7</version> <!-- look for latest -->
+                        <version>3.0.7</version>
                     </dependency>
                     <dependency>
                         <groupId>com.eed3si9n.jarjarabrams</groupId>
