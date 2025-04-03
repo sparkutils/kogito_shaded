@@ -10,3 +10,4 @@ rule com.thoughtworks.xstream.** sparkutilsKogito.com.thoughtworks.xstream.@1
 rule com.github.javaparser.** sparkutilsKogito.com.github.javaparser.@1
 rule ch.obermuhlner.** sparkutilsKogito.ch.obermuhlner.@1
 rule io.cloudevents.** sparkutilsKogito.io.cloudevents.@1
+
