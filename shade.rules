@@ -1,6 +1,5 @@
 rule com.fasterxml.jackson.** sparkutilsKogito.com.fasterxml.jackson.@1
 rule org.xmlpull.** sparkutilsKogito.org.xmlpull.@1
-rule org.drools.** sparkutilsKogito.org.drools.@1
 rule org.eclipse.jdt.** sparkutilsKogito.org.eclipse.jdt.@1
 rule org.antlr.** sparkutilsKogito.org.antlr.@1
 rule org.jpmml.** sparkutilsKogito.org.jpmml.@1
