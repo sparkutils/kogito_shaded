@@ -5,7 +5,7 @@
     <groupId>com.sparkutils</groupId>
     <artifactId>kogito_shaded</artifactId>
 
-    <version>0.0.12</version>
+    <version>0.1.0-RC1</version>
     <name>Kogito Shaded</name>
     <description>Allow Kogito to be used with Spark</description>
     <url>https://sparkutils.github.io/kogito_shaded/</url>
@@ -40,7 +40,7 @@
     </profiles>
 
     <properties>
-        <kogitoPomVersion>10.0.0</kogitoPomVersion>
+        <kogitoPomVersion>10.2.0</kogitoPomVersion>
 
         <mavenCompilerPluginVersion>3.8.1</mavenCompilerPluginVersion>
         <mavenJarPluginVersion>3.2.0</mavenJarPluginVersion>
@@ -60,16 +60,17 @@
             </repository>
         </repositories>
     -->
+
     <distributionManagement>
         <repository>
-            <id>ossrh</id>
+            <id>central</id>
             <name>Quality Release Repository</name>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://central.sonatype.com/repository/maven/</url>
         </repository>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>central</id>
             <name>Quality Snapshot Repository</name>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -296,15 +297,15 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.7.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    <stagingProgressTimeoutMinutes>45</stagingProgressTimeoutMinutes>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>published</waitUntil>
+                    <ignorePublishedComponents>true</ignorePublishedComponents>
                 </configuration>
             </plugin>
         </plugins>
